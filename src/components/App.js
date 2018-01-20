@@ -10,6 +10,7 @@ import {
 
 import Routes from '../router';
 
+
 class ModalSwitch extends Component {
 
   // We can pass a location to <Switch/> that will tell it to
@@ -47,17 +48,17 @@ class ModalSwitch extends Component {
     )
     
     return (
-      <Router>
-        <Routes isModal = {isModal} />
-      </Router>
+      <div>
+        <Routes isModal = {isModal} previousLocation={this.previousLocation} location={this.props.location} />
+      </div>
     )
   }
 }
 
-// const ModalGallery = () => (
-//   <Router>
-//     <Route component={ModalSwitch} />
-//   </Router>
-// )
+const ModalGallery = () => (
+  <Router>
+    <Route component={ModalSwitch} />
+  </Router>
+)
 
-export default ModalSwitch
+export default ModalGallery

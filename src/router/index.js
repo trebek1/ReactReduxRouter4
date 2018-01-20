@@ -13,7 +13,7 @@ import Alex from '../components/Alex';
 
 const Routes = (props) => (
   <div>
-    <Switch>
+    <Switch location={props.isModal ? props.previousLocation : props.location}>
       <Route exact path='/' component={Home}/>
       <Route path='/gallery' component={Gallery}/>
       <Route path='/img/:id' component={ImageView}/>
